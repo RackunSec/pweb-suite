@@ -1,5 +1,7 @@
 Install the pWeb Suite
 
+Simply unzip the directory and cd into the tool category directory then run it with ./
+
 _*Depends*_
 
 Digest::MD5 (Perl) [<a href="http://perldoc.perl.org/Digest/MD5.html">link</a>]
