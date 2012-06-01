@@ -1,4 +1,5 @@
 SMSI (SimplyMySQLi)
+
 _*About*_
 MySQL SQL Injection Vulnerability finding tool.
 
