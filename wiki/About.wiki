@@ -43,7 +43,7 @@ _*Video Demos*_
 
 <a href="http://weaknetlabs.com/pcrack/pcrack.mp4">MP4 of various pWeb Tools in Action</a> on the WeakNet Labs website.
 
-<a href="http://weaknetlabs.com/linux/pcrackdemo/pcrackdemo.html"/>A second video showing StrEncode, SMSI, and HelLFiRE</a> on the WeakNet Labs website.
+<a href="http://weaknetlabs.com/linux/pcrackdemo/pcrackdemo.html">A second video showing StrEncode, SMSI, and HelLFiRE</a> on the WeakNet Labs website.
 
 _*TODO / future*_
 
