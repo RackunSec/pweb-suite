@@ -1,10 +1,10 @@
 Perl based web application penetration testing tools
 
-_About_
+_*About*_
 
 This suite covers a lot of simple automation for penetration testing web applications and vulnerability research. Originally slated to debut in WEAKERTH4N Linux, this code was a helpful way for me to learn more about web application design, functionality, security and more. It is formerly known as the pCrack Suite.
 
-_Contents_
+_*Contents*_
 
  * Web Application Vuln Finding:
    * LFI / RFI
@@ -32,11 +32,11 @@ _Contents_
  * Wordlist Utilities:
    * RePsychoLoop
 
-_Perl dependencies / Other dependencies_
+_*Perl dependencies / Other dependencies*_
 
 For color output: Term::ANSIColor
 
-_TODO / future_
+_*TODO / future*_
 
  * XSSPlay.pl completion (XSS Automation tool in the works)
 
