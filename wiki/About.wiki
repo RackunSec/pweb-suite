@@ -2,7 +2,7 @@ Perl based web application penetration testing tools
 
 _About_
 
-This suite covers a lot of simple automation for penetration testing web applications and vulnerability research. Originally slated to debut in WEAKERTH4N Linux, this code was a helpful way for me to learn more about web application design, functionality, security and more. 
+This suite covers a lot of simple automation for penetration testing web applications and vulnerability research. Originally slated to debut in WEAKERTH4N Linux, this code was a helpful way for me to learn more about web application design, functionality, security and more. It is formerly known as the pCrack Suite.
 
 _Contents_
 
