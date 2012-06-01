@@ -6,7 +6,7 @@ FileScope uses a wordlist to brute force directories and files for web servers w
 
 _*Depends*_
 
-use Term::ANSIColor (Perl)
+use Term::ANSIColor (Perl)<br />
 use LWP::UserAgent (Perl)
 
 _*Manual*_
