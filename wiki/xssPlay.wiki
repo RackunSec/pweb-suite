@@ -8,6 +8,8 @@ This tool is valuable not only to the penetration tester, but to the web program
 
 <a href="http://weaknetlabs.com/images/xssplay0.png">Full sized screenshot of xssPlay and its ability to take screenshots in WEAKERTH4N Linux</a> 
 
+To learn more about XSS vulnerabilities in depth, please read "aCross the Internet Oceans - Cross Site Scripting for Internet Sailors" by Douglas Berdeaux on <a href="http://weaknetlabs.com/AcrosstheInternetSeas.pdf">WeakNetLabs.com</a>
+
 ==Dependencies (4 Perl modules/1 Firefox plugin)==
 <a href="http://search.cpan.org/~gaas/libwww-perl-6.04/lib/LWP.pm">LWP;</a>
 <a href="http://search.cpan.org/~gaas/libwww-perl-6.04/lib/LWP/UserAgent.pm">LWP::UserAgent;</a>
