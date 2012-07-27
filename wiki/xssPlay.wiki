@@ -40,7 +40,9 @@ string = make it anything you want!
 {{{Tools->MozRepl->Start }}}
 
 ==User Agents==
-You can now randomly choose user agents to specify them statically. Simply specify {{{-u m}}} for random mobile user agent, or {{{-u s}}} for a random standard desktop user agent. Warning: this will fill your pentest lab or victim's HTTP server log(s) with falsified information.
+You can now randomly choose user agents to specify them statically. Simply specify {{{-u m}}} for random mobile user agent, or {{{-u s}}} for a random standard desktop user agent. Warning: this will fill your pentest lab or victim's HTTP server log(s) with falsified information. 
+
+Note: For user agents to be random and work correctly, the file ../includes/user_agent_list.txt needs to be accessible by xssPlay. This file comes with the latest version of the pWeb Suite.
 
 ===Agents===
 Mobile: iPhone, iPad, Opera Mini, Blackberry and Android<br/>
