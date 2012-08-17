@@ -30,6 +30,10 @@ To learn more about XSS vulnerabilities in depth, please read "aCross the Intern
 
 *-a* (m|s|x|string) (specify user agent to use, or choose random)
 
+*-o* (html|txt) (specify log output type)
+
+*-r* (recursive for crawling)
+
 m = mobile, 
 s = standard, 
 x = choose randomly for each http request, 
