@@ -2,6 +2,8 @@
 
 *xssPlay* is an automation tool for finding and exploiting non-persistent XSS vulnerabilities in web applications and dynamic pages. This tool will actually mechanize screenshots, using the MozRepl firefox plugin, of the defaced webpage (if successful and specified) in the background while it tests each GET parameter in the passed URL.
 
+The URL specified after '-u' *must* contain a filename and GET parameters for xssPlay to work. It does do recursion and can crawl through the file specified (e.g. index.php?foo=bar,filename.aspx?foo=bar&bar=baz,events.asp?bar=foo) for links and will test each link. 
+
 <a href="http://www.youtube.com/watch?v=VPuJM7H5AC8">YouTube Video Example</a>
 
 This tool is valuable not only to the penetration tester, but to the web programmer as well for testing code. It has the ability to detect and defeat magic quotes for defacement, detect input sanitation code, and even detect custom built search bars.
