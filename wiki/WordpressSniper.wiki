@@ -12,7 +12,7 @@
 <a href="http://search.cpan.org/~rra/Term-ANSIColor-3.02/ANSIColor.pm">Term::ANSIColor;</a>
 
 ==Manual==
-Usage: ./wp-sniper <URL> <OPTIONS>
+Usage: ./wp-sniper URL OPTIONS
  
 ===Options===
 *-r* random wait time between GET requests - to seem more human
