@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+# scrape code from exploit-db top gen file used by wp_sniper
+# coded by weaknetlabs@gmail.com
+# 
+# Make list:
+# http://www.exploit-db.com/search/?action=search&filter_page= 1-N  &filter_description=wordpress # increment N until no results.
+#
+# Wordpress page for plugins: http://wordpress.org/extend/plugins/search.php?page=1&q=the
+#
+my @links = `cat elinks.txt`;
+foreach(@links){
+	chomp $_;
+	my $wp = `curl '$_' 2>/dev/null| grep -E -v '[\$]' | grep -i -E '(author|Exploit Title|\\/wp-content\\/plugins\\/|\\/wp-admin\\/)' | sed -e 's/.*\\/wp-content/URL: \\/wp-content/' -e 's/.*\\/wp-admin/URL: \\/wp-admin/' | sed 's/.*Auth/Auth/' | sed 's/.*Exploit /Exploit /' | grep -v '<' | grep -E '(^U|^E|^A)'`; # that last grep is sloppy, i know, but i have no idea how that garbage shows up. roll dice.
+	$wp =~ s/&quot;/'/g; # HTML parse
+	if($wp ne '') { print "*BEG\nEXPURL: " . $_ ."\n" . $wp . "*END\n"; }
+}

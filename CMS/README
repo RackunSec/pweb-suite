@@ -1,0 +1,14 @@
+0. create list of URLs from doing this:
+	using URL: http://www.exploit-db.com/search/?action=search&filter_page=N&filter_description=wordpress
+	# increment N until there are no results.
+	example:
+	curl 'http://www.exploit-db.com/search/?action=search&filter_page=1&filter_description=wordpress' 2>/dev/null | grep -E '/exploits/[0-9]' | sed -e 's/.*ef="//' -e 's/">.*//' | tee elinks.txt
+	or something like that. I have one here, but it's good to update.
+1. create list of plugin vulns using this: (it reads elinks.txt)
+	./scrape
+2. run wp_sniper
+	./wp_sniper -u <URL> -d 
+	(the -d will check to see if default files are left on the server for reports)
+3. prey and pray
+
+~Douglas weaknetlabs@gmail.com

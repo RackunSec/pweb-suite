@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        body {
+                background: black;
+                color: #ccc;
+                font-size: 12px;
+                font-family: monospace;
+        }
+        a {
+                color: cyan;
+        }
+</style>
+<title>xssPlay HTML Log file</title>
+</head>
+<body>
+<h3>xssPlay Log file for domain: <%DOMAIN%> </h3> 
+<table>
+
+

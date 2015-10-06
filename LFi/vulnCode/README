@@ -1,9 +1,6 @@
-Found in the /LFi/VulnCode directory of the pWeb Suite
-
 # Coded by Douglas 
 # (c) WeakNetLabs.com
 #
-
 1. pass this php code a filename using your browser, like so:
 
 	http://url.com/vuln_code.php?filename="../../../../../../../etc/passwd"

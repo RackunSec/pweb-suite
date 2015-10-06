@@ -1,0 +1,12 @@
+*BEG
+EXPURL: http://www.wordpress.com
+Exploit Title: Default Wordpress files
+Author: Trevelyn
+URL: /license.txt
+URL: /README.html
+URL: /wp-admin/install.php
+URL: /wp-admin/install-helper.php
+URL: /wp-admin/setup-config.php
+URL: /wp-config-sample.php
+URL: /?s='
+*END

