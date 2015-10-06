@@ -1,0 +1,38 @@
+# pweb-suite
+This Suite (formerly known as the "pCrack Suite") of tools is used primarily or web application vulnerability testing.
+
+# Screenshots
+xssPlay! Screenshot:
+<a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a>
+<a target="_blank" href="https://weaknetlabs.com/images/xssplayscreen0.png"><img src="https://weaknetlabs.com/images/xssplayscreen0.png" width="500"/></a>
+
+# Video Demos
+xssPlay! (<a href="https://www.youtube.com/watch?v=VPuJM7H5AC8">https://www.youtube.com/watch?v=VPuJM7H5AC8</a>)
+Misc, MySQLi, etc (<a href="https://www.youtube.com/watch?v=clY6A_mXn4g">https://www.youtube.com/watch?v=clY6A_mXn4g</a>)
+
+# Usage
+All tools come with a Help dialog, simply run the tool with ./tool --help for more information on how to use it.
+
+# Perl Dependencies
+LWP; LWP::UserAgent; Term::ANSIColor; WWW::Mechanize::Firefox;LWP; Term::ANSIColor;Digest::MD5 (Perl) [link] 
+Term::ANSIColor; Crypt::PasswdMD5
+Firefox MozRepl Plugin LWP::UserAgent
+
+# Thank you
+
+                          |          |
+                          |\         |\
+                          ||\        ||\
+                          |||\       |||\
+                          ||||\      ||||\       |,
+                          |||||\     |||||\      |\
+                          ||||||\    ||||||\     ||\
+              ____        |||||||\   |||||||\    |||\
+             '--O_]       |-------   |-------    ||||\
+       '-----...'- '----. |\         |           |----`
+              \=========--'-,________|___________|\_         
+               \===========--|_|_|_|_|_|_|_|=======/
+              . \===========------------===="WNL"=/
+            '  .~~'~,.=======-----------------===/
+     ~~~~~~~~~~  ~ ~~ ~`~~~~~~~~~~~~~~~~~~~~~~~~'~~~~~~~~~~~
+ Thank you for sailing WeakNet Laboratories...
