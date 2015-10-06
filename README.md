@@ -2,9 +2,9 @@
 This Suite (formerly known as the "pCrack Suite") of tools is used primarily or web application vulnerability testing.
 
 # Screenshots
-xssPlay! Screenshot:
+xssPlay! Screenshot:<br />
 <a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a><br />
-<a target="_blank" href="https://weaknetlabs.com/images/xssplayscreen0.png"><img src="https://weaknetlabs.com/images/xssplayscreen0.png" width="500"/></a>
+<a target="_blank" href="https://weaknetlabs.com/images/xssplayscreen0.png"><img src="https://weaknetlabs.com/images/xssplayscreen0.png" width="500"/></a><br />
 
 # Video Demos
 xssPlay! (<a href="https://www.youtube.com/watch?v=VPuJM7H5AC8">https://www.youtube.com/watch?v=VPuJM7H5AC8</a>)
