@@ -1,6 +1,27 @@
 # pweb-suite
 This Suite (formerly known as the "pCrack Suite") of tools is used primarily or web application vulnerability testing. This is an older project that began around May of 2011 and comes with every version of Weakerthan Linux starting at 4. 
 
+# Tools Listing
+<table>
+  <tr><td>CMS - WP_Sniper</td><td>Wordpress vulnerability testing</td></tr>
+  <tr><td>File Inclusion - HelLFiRE</td><td>LFI vulnerability testing</td></tr>
+  <tr><td>File Inclusion - LogInject0r</td><td>LFi - log injection exploit</td></tr>
+  <tr><td>Mathematics - Fibonacci</td><td>Calculates Fibonacci sequence with just two variables</td></tr>
+  <tr><td>Mathematics - Primes</td><td>Pprime numbers generator</td></tr>
+  <tr><td>(OSINT) Online Resources - Havijmd5BF</td><td>Havij Report file finder (Uses Google)</td></tr>
+  <tr><td>(OSINT) Online Resources - md5online</td><td>MD5 Rainbow table lookup</td></tr>
+  <tr><td>(OSINT) Online Resources - pBincracker</td><td>Pastebin passwords search</td></tr>
+  <tr><td>(OSINT) Online Resources - ripemd160online</td><td>RIPEMD160 Rainbow table lookup</td></tr>
+  <tr><td>(OSINT) Online Resources - sha1online</td><td>SHA1 Rainbow table lookup</td></tr>
+  <tr><td>(OSINT) Online Resources - sha1on256ine</td><td>SHA256 Rainbow table lookup</td></tr>
+  <tr><td>Recon - FileScope</td><td>File and Directory brute force tool</td></tr>
+  <tr><td>Recon - STGB</td><td>SImple plain text Google Browser</td></tr>
+  <tr><td>SQL Injection - SMSQLi</td><td>Simple MySQL Injector</td></tr>
+  <tr><td>Password Cracking - EtsyShadow</td><td>Cracking password from recovered /etc/shadow- file</td></tr>
+  <tr><td>Word List Generation - RePsychoLoop</td><td>permutation generator using word lists or characters</td></tr>
+  <tr><td>XSS - XSSPlay!</td><td>Cross Site Scripting vulnerability testing and graphical automation</td></tr>
+  <tr><td>XSS - StringEnc</td><td>Obfuscation generator for XSS or Code Injection attacks</td></tr>
+</table>
 # Screenshots
 xssPlay! Screenshots (links open in new tab):<br />
 <a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a><br />
