@@ -3,7 +3,7 @@ This Suite (formerly known as the "pCrack Suite") of tools is used primarily or 
 
 # Screenshots
 xssPlay! Screenshot:
-<a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a>
+<a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a><br />
 <a target="_blank" href="https://weaknetlabs.com/images/xssplayscreen0.png"><img src="https://weaknetlabs.com/images/xssplayscreen0.png" width="500"/></a>
 
 # Video Demos
