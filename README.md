@@ -6,8 +6,8 @@ xssPlay! Screenshots (links open in new tab):<br />
 <a target="_blank" href="https://weaknetlabs.com/images/xssplay0.png"><img src="https://weaknetlabs.com/images/xssplay0.png" width="500"/></a><br />
 <a target="_blank" href="https://weaknetlabs.com/images/xssplayscreen0.png"><img src="https://weaknetlabs.com/images/xssplayscreen0.png" width="500"/></a><br />
 
-# Video Demos
-xssPlay! (<a href="https://www.youtube.com/watch?v=VPuJM7H5AC8">https://www.youtube.com/watch?v=VPuJM7H5AC8</a>)
+# YouTube Video Demos
+xssPlay! (<a href="https://www.youtube.com/watch?v=VPuJM7H5AC8">https://www.youtube.com/watch?v=VPuJM7H5AC8</a>)<br />
 Misc, MySQLi, etc (<a href="https://www.youtube.com/watch?v=clY6A_mXn4g">https://www.youtube.com/watch?v=clY6A_mXn4g</a>)
 
 # Usage
